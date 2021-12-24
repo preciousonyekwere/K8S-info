@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: podwithenv-variables 
+spec:        
+ containers:
+ - image: mysql
+   name: data-base-pod
+   env:
+   - name: MYSQL_ROOT_PASSWORD
+     value: precious
