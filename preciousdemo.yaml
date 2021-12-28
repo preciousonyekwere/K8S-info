@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: presh
+ namespace: default
+ labels: 
+  app: app4
+spec:
+ containers:
+ - name: preshcont
+   image: mysql
+   env:
+   - name: MYSQL_ROOT_PASSWORD
+     value: allow
+   resources:
+    limits:
+     cpu: 100m
+     memory: 500Mi
+
