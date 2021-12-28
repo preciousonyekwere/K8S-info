@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: secondpod
+ # namespace: pod-namespace1
+spec: 
+ containers:
+ - name: aaron
+   image: httpd
+   ports:
+   - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: thirdpod
+ # namespace: pod-namespace1
+spec:
+ containers:
+ - name: aaron2
+   image: nginx
+   ports:
+   - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: multi-containerpod
+ labels:
+  app: app4
+ # namespace: pod-namespace1
+spec:
+ containers:
+ - name: aaron4
+   image: nginx
+   ports:
+   - containerPort: 80
+ - name: aaron3
+   image: tomcat
+   ports:
+   - containerPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: fifthpod
+ namespace: mynamespace
+spec:
+ containers:
+ - name: aaronk
+   image: nginx
+   ports:
+   - containerPort: 80
